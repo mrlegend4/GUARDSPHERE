@@ -28,8 +28,8 @@ The website introduces users to different cyberattacks, explains how they work, 
 
 ## 🛠️ Technologies Used
 
-* HTML5
-* CSS3
+* HTML
+* CSS
 
 ## 🚀 Getting Started
 
