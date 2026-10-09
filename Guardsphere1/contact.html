@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-title">
+            GUARDSPHERE
+        </div>
+        <div class="navbar-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon-label">
+                <img src="image-grid/navbar1-removebg-preview.png" alt="Menu Icon" class="menu-icon"> <!-- Replace with your icon's path -->
+            </label>
+            <div class="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="cybersecurity.html">THE PROBLEM</a></li>
+                    <li><a href="landing-page.html">THE SOLUTION</a></li>
+                    <li><a href="contact.html">CONTACT FORM</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class = "contact-left">
+            <div class="contact-left-title">
+                <h2>Get in touch</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="4491b368-635d-44c2-9956-ced85b28f0c4">
+            <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img src="image-grid/arrow_icon.png" alt=""></button>
+        </form>
+        <div class="contact-right">
+            <img src="image-grid/right_img.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot");
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.svg#Montserrat ExtraBold")format("svg");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot");
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.svg#Montserrat")format("svg");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.eot");
+    src: url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.svg#Poppins")format("svg");
+}
+
+/* Header Styling */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(6, 0, 95);
+    padding: 1rem 2rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat ExtraBold';
+    color: rgb(255, 255, 255);
+}
+
+/* Title on the Left */
+.site-header .header-title {
+    flex: 1;
+    text-align: left;
+    font-size: clamp(1rem, 2vw + 1vh, 2rem); /* Reduced max font size */
+    font-weight: normal;
+}
+
+/* Navigation Container */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Custom Menu Icon */
+.menu-icon {
+    width: 4vw; /* Adjust icon size for smaller screens */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Hide default checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu Icon Label */
+.menu-icon-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Navigation Menu (Hidden by Default) */
+.navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(6, 0, 95);
+    width: 40vw; /* Adjusted to be responsive and smaller */
+    z-index: 200;
+    padding: clamp(2rem, 5vw, 3rem); /* Responsive padding */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show the menu when checkbox is checked */
+.menu-toggle:checked + .menu-icon-label + .navbar-menu {
+    display: block;
+}
+
+/* Style for the menu links */
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    margin: 0.5rem 0; /* Adjusted spacing to be smaller */
+}
+
+/* Responsive and Smaller Menu Links */
+.navbar-menu ul li a {
+    color: #a4ddfb;
+    font-size: clamp(1rem, 3vw, 1.75rem); /* Smaller and responsive font size */
+    text-decoration: none;
+    padding: clamp(0.5rem, 1vw, 1rem); /* Smaller padding for links */
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.navbar-menu ul li a:hover {
+    color: #2870dc;
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:  "Montserrat ExtraBold";
+    background: linear-gradient(#ABCDEF, #87CEEB, #4682B4);
+}
+
+.contact-container{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-left{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    gap:20px;
+}
+
+.contact-left-title h2{
+    font-weight: 600;
+    color:rgb(6, 0, 95);
+    font-size:calc(3vw + 3vh);
+    margin-bottom:5px;
+    margin-top: 3vw;
+}
+
+.contact-left-title hr{
+    border:none;
+    width:25vw;
+    height:5px;
+    background-color: rgb(6, 0, 95);
+    border-radius: 10px;
+    margin-bottom:20px;
+}
+
+.contact-inputs{
+    width:35vw;
+    height:7vh;
+    border:none;
+    outline:none;
+    padding-left:25px;
+    font-weight:500;
+    color:#666;
+    border-radius:50px;
+}
+
+.contact-left textarea{
+    height:18vh;
+    padding-top:15px;
+    border-radius:20px;
+}
+
+.contact-inputs:focus{
+    border:2px solid rgb(6, 0, 95);
+}
+
+.contact-inputs:placeholder{
+    color:rgb(6, 0, 95);
+}
+
+.contact-left button{
+    display:flex;
+    align-items:center;
+    padding: 15px 30px;
+    font-size: calc(1vw + 1vh);
+    color: #fff;
+    gap:15px;
+    border:none;
+    border-radius:50px;
+    background: linear-gradient(270deg, #5c68e7, rgb(6, 0, 95));
+    cursor:pointer;
+}
+
+.contact-left button img{
+    height:2vh;
+}
+
+.contact-right img{
+    width:calc(25vw + 25vh);
+}
+
+@media (max-width:800px){
+    .contact-inputs{
+        width:80vw;
+    }
+    .contact-right{
+        display:none;
+    }
+}

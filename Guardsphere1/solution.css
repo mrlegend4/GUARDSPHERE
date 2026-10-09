@@ -1,0 +1,413 @@
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot");
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.svg#Montserrat ExtraBold")format("svg");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot");
+    src: url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/5fc6f4fd75e944a52a342ab2c7f100f1.svg#Montserrat")format("svg");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.eot");
+    src: url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/8cdb6b9f81fd5d65941e179961c84065.svg#Poppins")format("svg");
+}
+
+/* Header Styling */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(6, 0, 95);
+    padding: 1rem 2rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat ExtraBold';
+    color: rgb(255, 255, 255);
+}
+
+/* Title on the Left */
+.site-header .header-title {
+    flex: 1;
+    text-align: left;
+    font-size: clamp(1rem, 2vw + 1vh, 2rem); /* Reduced max font size */
+    font-weight: normal;
+}
+
+/* Navigation Container */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Custom Menu Icon */
+.menu-icon {
+    margin-right: 4rem;
+    width: 4vw; /* Adjust icon size for smaller screens */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Hide default checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu Icon Label */
+.menu-icon-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Navigation Menu (Hidden by Default) */
+.navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(6, 0, 95);
+    width: 40vw; /* Adjusted to be responsive and smaller */
+    z-index: 200;
+    padding: clamp(2rem, 5vw, 3rem); /* Responsive padding */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show the menu when checkbox is checked */
+.menu-toggle:checked + .menu-icon-label + .navbar-menu {
+    display: block;
+}
+
+/* Style for the menu links */
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    margin: 0.5rem 0; /* Adjusted spacing to be smaller */
+}
+
+/* Responsive and Smaller Menu Links */
+.navbar-menu ul li a {
+    color: #a4ddfb;
+    font-size: clamp(1rem, 3vw, 1.75rem); /* Smaller and responsive font size */
+    text-decoration: none;
+    padding: clamp(0.5rem, 1vw, 1rem); /* Smaller padding for links */
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.navbar-menu ul li a:hover {
+    color: #2870dc;
+}
+
+html, body {
+    font-size: 100%;
+    font-style: normal;
+    font-display: fallback;
+    scroll-behavior: smooth;
+    height: -webkit-fill-available;
+    margin: 0; 
+}
+
+.subheading1 {
+    font-family: 'Montserrat ExtraBold';
+    padding-top: 10vw;
+    padding-bottom: 3vw;
+    font-size: 7vw;
+    text-align: center;
+    max-width: 80vw;
+    margin-left: auto;  /* Center the element */
+    margin-right: auto; /* Center the element */
+}
+
+@media (max-width: 600px) {
+    .subheading1 {
+        font-size: 10vw; /* Adjust font-size for smaller screens */
+        margin-top: 10vw; /* Increase the top margin for smaller screens */
+    }
+}
+
+.subheading2{
+    font-family: 'Montserrat ExtraBold';
+    padding-top: 10vw;
+    padding-bottom: 3vw;
+    font-size: 5vw;
+    text-align: center;
+}
+
+
+h1 {
+    line-height: 1.15;
+    text-wrap: balance;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    font-size: clamp(1.5rem, 5vw, 5rem);
+    font-family: Montserrat;
+}
+
+p {
+    max-width: 60ch;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.subheading{
+    font-size: 3rem;
+    font-family: Poppins;
+    text-align: center;
+}
+
+.image-left img {
+    width: calc(100% - 20px);
+    height: auto;
+    object-fit: cover;
+    display: block;
+    top: 0;
+    left: 0;
+    padding: 20px 0px 10px 0px;
+}
+
+.image-right img {
+    width: calc(100% - 20px);
+    height: auto;
+    object-fit: cover;
+    display: block;
+    bottom: 0;
+    right: 0;
+    padding-top: 55px;
+    padding-left: 15px;
+}
+
+.content{
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    height: auto;
+    width: 100%;
+    grid-template-columns: 1fr 1fr; 
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container.one{
+    background-color: orangered;
+}
+
+.container.two{
+    background-color: plum;
+}
+
+.container.three{
+    background-color: #559ad3;
+}
+
+.container.four{
+    background-color:beige;
+}
+
+.inner-left, .inner-right{
+    display: grid;
+}
+
+
+@media screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr; /* Stacks the inner divs vertically */
+    }
+
+    .image-left img, .image-right img{
+        max-height: 180px;
+        width: auto;
+        padding: 0 0 0 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1{
+       font-size: clamp(3rem, 5vw, 9rem);
+    }
+
+    p{
+        max-width: 25ch;
+        font-size: clamp(1.2rem, 1.5rem, 1.6rem);
+    }
+    iframe{
+        max-width: 100%;
+        height: auto;
+      }
+
+
+}
+
+@media screen and (min-width: 800px) {
+    .container-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .container {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    p{
+        font-size: clamp(1.8rem, 3vw, 2rem);
+    }
+}
+
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Masonry effect */
+    gap: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+/* General card settings */
+.card {
+    background: #f2f2f2;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+}
+
+/* Image settings */
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text content */
+.card-inner {
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.paragraph {
+    font-size: 1.5rem;
+}
+
+.card .card-large{
+    grid-row: span 2;
+}
+
+.references {
+    display: grid;
+    place-items: center;
+    padding-bottom: 4rem;
+  }
+
+.new-screen {
+    width: 100%;
+    padding: 3rem 0; /* Add padding for spacing */
+    background-color: rgb(6, 0, 95); /* White background for contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextpage {
+    text-align: center;
+    max-width: 70%; /* Adjust as needed */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextpage1, .nextpage2, .nextpage3 {
+    margin: 0 auto; /* Center the text horizontally */
+}
+
+.nextpage1 {
+    font-family: 'Montserrat ExtraBold'; /* Added sans-serif fallback */
+    font-size: calc(1.2vw + 1.2vh);
+    color: #a4ddfb; /* Color for the first heading */
+    margin-bottom: 0;
+}
+
+.nextpage2 {
+    font-family: 'Montserrat ExtraBold'; /* Added sans-serif fallback */
+    font-size: calc(4vw + 4vh);
+    color: #a4ddfb; /* Color for the second heading */
+    margin: 2rem 0 1.5rem; /* Adjusted margins for spacing */
+}
+
+.nextpage3 {
+    font-family: 'Montserrat ExtraBold'; /* Added sans-serif fallback */
+    font-size: calc(1.5vw + 1.5vh);
+    color: #a4ddfb; /* Color for the third heading */
+    max-width: 80%;
+    text-align: center; /* Center-aligns the text */
+    margin: 0 auto; /* Centers the element horizontally */
+    margin-bottom: 3rem; /* Space below the text */
+}
+
+.arrow-link {
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    justify-content: center; /* Center the arrow */
+    align-items: center;
+    margin-top: 2rem; /* Add space above the circle */
+}
+
+.arrow-circle {
+    width: 15vw; /* Circle diameter */
+    height: 15vw; /* Maintain circle shape */
+    background-color: #a4ddfb; /* Circle color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer; /* Pointer cursor for better UX */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.arrow-circle:hover {
+    background-color: #90c8e5; /* Lighter shade on hover for better interaction */
+}
+
+.arrow-right {
+    font-size: 8vw; /* Adjust arrow size */
+    color: white; /* Arrow color */

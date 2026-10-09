@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man In the Middle</title>
+    <link rel="stylesheet" href="solution02.css">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <div class="header-title">
+                GUARDSPHERE
+            </div>
+            <div class="navbar-container">
+                <input type="checkbox" id="menu-toggle" class="menu-toggle" style="display: none;">
+                <label for="menu-toggle" class="menu-icon-label">
+                    <img src="image-grid/navbar1-removebg-preview.png" alt="Menu Icon" class="menu-icon">
+                </label>
+                <div class="navbar-menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="cybersecurity.html">THE PROBLEM</a></li>
+                        <li><a href="landing-page.html">THE SOLUTION</a></li>
+                        <li><a href="contact.html">CONTACT FORM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="subheading1">Man in the middle attack</div>
+
+            <div class="tle">Closer than you might actually think...</div>
+
+
+            <div class="intro">
+                <!-- Intro content goes here -->
+            </div>
+
+            
+
+            <div class="masonry">
+                <div class="card">
+                    <img src="image-grid/pirate_initiate_download.png" class="card-image large" alt="landscape">
+                    <div class="card-inner">
+                        <h3 class="title">You initiate a file donwload.</h3>
+                        <p class="paragraph">You begin by downloading a file, such as software or an update, from a legitimate and trusted website. Your request is sent over the internet to retrieve the authentic file from the developer's server.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="image-grid/pirate_mitm_attack.jpeg" alt="landscape">
+                    <div class="card-inner">
+                        <h3 class="title">The attacker intercepts the download.</h3>
+                        <p class="paragraph">Without your knowledge, an attacker intercepts the connection between you and the server. This can happen on the server side, where the attacker compromises the server or reroutes your traffic using a DNS attack. Alternatively, if you are on an unsecured network, such as public Wi-Fi, the attacker can intercept the communication directly.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="image-grid/pirate_injection.webp" class="card-image" alt="landscape">
+                    <div class="card-inner">
+                        <h3 class="title">Malicious code is injected.</h3>
+                        <p class="paragraph">After intercepting the file, the attacker modifies it by injecting malicious code. The tampered file is then forwarded to you, appearing unchanged. You download and install the compromised software, unknowingly running harmful code on your system.</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <img class="article_img" src="image-grid/pirate_hash.png">
+
+            <div class="subheading2">This is where the power of the hashbrowns come into play.</div>
+
+            <div class="tle1">And don't worry - it might seem daunting - but they are already baked in.</div>
+
+            <div class="the_how">
+                <div class="container-group">
+                    <div class="container one">
+                        <div class="inner-left">
+                            <div class="image-left">
+                                <img src="image-grid/pirate_developer.png" alt="Hacker searching for Vulnerabilities.">
+                            </div>
+                            <div class="content">
+                                <h1>1. Software creation</h1>
+                                <p>The software developer writes the source code which are turned into binary 0's and 1's object code.</p>
+                            </div>    
+                        </div>
+                        <div class="inner-right">
+                            <div class="content">
+                                <p>A cryptographic hash (e.g., SHA-256) is applied to the software to create a unique hash value.</p>
+                            </div>
+                            <div class="image-right">
+                                <img src="image-grid/priate_hash.png" alt="">
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="container two">
+                        <div class="inner-left">
+                            <div class="image-left">
+                                <img src="image-grid/pirate_transfer.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h1>2. Hash publication and download</h1>
+                                <p>The developer or distributor publishes the hash value of the software alongside the download link on their website.</p>
+                            </div>
+                        </div>
+                        <div class="inner-right">
+                            <div class="content">
+                                <p>Hash values allow comparison of the user-generated hash with the one provided by the software distributor.</p>
+                            </div>
+                            <div class="image-right">
+                                <img src="image-grid/pirate_checksum_tamper.png" alt="">
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-group">
+                    <div class="container three">
+                        <div class="inner-left">
+                            <div class="image-left">
+                                <img src="image-grid/pirate_download.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h1>3. Software downloaded and user generates hash for verification.</h1>
+                                <p>The user downloads the software from the websites.</p>
+                            </div>
+                        </div>
+                        <div class="inner-right">
+                            <div class="content">
+                                <p>The user compares the hash they generated locally with the hash value provided by the developer.</p>
+                            </div>
+                            <div class="image-right">
+                                <img src="image-grid/pirate_checksum.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container four">
+                        <div class="inner-left">
+                            <div class="image-left">
+                                <img src="image-grid/pirate_avalanche.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h1>4. Avalanche effect</h1>
+                                <p> A matching hash confirms that the file is genuine and hasn’t been tampered with. A mismatch signals corruption or malicious modification.</p>
+                            </div>
+                        </div>
+                        <div class="inner-right">
+                            <div class="content">
+                                <p>The slightest change in the input results in a different hash value, making tampering easy to spot.</p>
+                            </div>
+                            <div class="image-right">
+                                <img src="image-grid/pirate_magnifying.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="subheading">External Resources</h2>
+
+
+            <div class="references">
+
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/PbFVTb7Pndc?si=sChFSk_7H4J-NCTa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <br>
+
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-enHfpHMBo4?si=PapgYYUkIo4ny6EC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+                <br>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/b4b8ktEV4Bg?si=PAyV5zTlnoWdFl6P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+            
+        </main>
+        <div class="new-screen">
+            <div class="nextpage">
+                <div class="nextpage1">Next Page</div>
+                <div class="nextpage2">MAN IN THE MIDDLE ATTACK</div>
+                <div class="nextpage3">Beware the middleman</div>
+            </div>
+            <a href="evil_twin.html" class="arrow-link">
+                <div class="arrow-circle">
+                    <span class="arrow-right">&#8594;</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

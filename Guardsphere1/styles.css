@@ -1,0 +1,1107 @@
+@font-face {
+    font-family: "GT America Extended Bold";
+    src: url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.eot");
+    src: url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/40794b621791bf498f2f06237862031f.svg#GT America Extended Bold")format("svg");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot");
+    src: url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1f275ed58d6a371ccde9215a3963cc41.svg#Montserrat ExtraBold")format("svg");
+}
+
+@font-face {
+    font-family: "Roc Grotesk W05 Wide Bold";
+    src: url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.eot");
+    src: url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/dc0c9cb78690bb482ae3bb782c3cc693.svg#Roc Grotesk W05 Wide Bold")format("svg");
+}
+
+/* Header Styling */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 1rem 2rem;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat ExtraBold';
+    color: rgb(255, 255, 255);
+}
+
+/* Title on the Left */
+.site-header .header-title {
+    flex: 1;
+    text-align: left;
+    font-size: clamp(1rem, 2vw + 1vh, 2rem); /* Reduced max font size */
+    font-weight: normal;
+}
+
+/* Navigation Container */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Custom Menu Icon */
+.menu-icon {
+    margin-right: 1rem;
+    width: 4vw; /* Adjust icon size for smaller screens */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Hide default checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Menu Icon Label */
+.menu-icon-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Navigation Menu (Hidden by Default) */
+.navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(6, 0, 95);
+    width: 40vw; /* Adjusted to be responsive and smaller */
+    z-index: 200;
+    padding: clamp(2rem, 5vw, 3rem); /* Responsive padding */
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show the menu when checkbox is checked */
+.menu-toggle:checked + .menu-icon-label + .navbar-menu {
+    display: block;
+}
+
+/* Style for the menu links */
+.navbar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu ul li {
+    margin: 0.5rem 0; /* Adjusted spacing to be smaller */
+}
+
+/* Responsive and Smaller Menu Links */
+.navbar-menu ul li a {
+    color: #a4ddfb;
+    font-size: clamp(1rem, 3vw, 1.75rem); /* Smaller and responsive font size */
+    text-decoration: none;
+    padding: clamp(0.5rem, 1vw, 1rem); /* Smaller padding for links */
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.navbar-menu ul li a:hover {
+    color: #2870dc;
+}
+
+
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    timeline-scope: --myScroller;
+}
+.scroll-box {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-timeline: --textTimeline y;
+    scroll-timeline-name: --myScroller;
+    position: relative;
+}
+.scroll-box .scroll-inner {
+    height: 2000vh;
+}
+.wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    pointer-events: none;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: updateTextAnimation linear 1ms both;
+    animation-timeline: --myScroller;
+}
+.wrapper .inner div {
+    font-size: 6vw;
+    font-family: 'Roc Grotesk W05 Wide Bold';
+    color: white;
+    height: 100%;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 3s ease-in-out, opacity 3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.0;
+}
+.wrapper .inner div:first-child {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeOut 1000s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 0% 10%;
+}
+.wrapper .inner div:not(:first-child) {
+    animation: slideUpFadeOut 1000s linear both;
+    animation-timeline: --myScroller;
+}
+.wrapper .inner div:nth-child(2) { animation-range: 10% 20%; }
+.wrapper .inner div:nth-child(3) { animation-range: 20% 30%; }
+.wrapper .inner div:nth-child(4) { animation-range: 30% 40%; }
+
+
+
+@keyframes fadeInImage {
+    0% { opacity: 0; }
+    50% { opacity: 0; } /* Start fading in halfway through the slide-up animation */
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(203,203,188);
+    animation: changeBackground steps(4, jump-none) 1ms both;
+    animation-timeline: --myScroller;
+}
+
+@keyframes updateTextAnimation {
+    0%, 10% { top: 0; }
+    10.01%, 20% { top: -100%; }
+    20.01%, 30% { top: -200%; }
+    30.01%, 40% { top: -300%; }
+}
+
+@keyframes changeBackground {
+    0% { 
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ), url('image-grid/vecteezy_global-network-connection-world-map-point-and-line_7872272.jpg');
+        background-color: rgb(203,203,188);
+    }
+    10% { 
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ), url('image-grid/vecteezy_global-network-connection-world-map-point-and-line_7872272.jpg');
+        background-color: rgb(203,203,188);
+    }
+    20% { background-color: rgb(203,203,188); }
+    30% { background-color: rgb(203,203,188); }
+    40% { background-color: rgb(203,203,188); }
+}
+
+@keyframes slideUpFadeOut {
+    0% { transform: translateY(20%); opacity: 0; }
+    50% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes popOut {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+
+.card-slide {
+    color:rgb(0, 255, 242);
+    position: fixed;
+    left: 0; /* Align to the left edge */
+    top: 0; /* Align to the top edge */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url('image-grid/background.jpeg'); /* Set your background image */
+    background-size: cover; /* Ensure background image covers the whole area */
+    background-position: center; /* Center the background image */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 40% 41%;
+    z-index: 11; /* Ensure it's above other content */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.center-image {
+    position: absolute; /* Position image absolutely within the card-slide */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust positioning to be exactly in the center */
+    width:25vw;
+    max-width: 80%; /* Ensure the image does not overflow the container */
+    max-height: 80%; /* Ensure the image does not overflow the container */
+    z-index:10;
+
+}
+
+
+.text-group1 {
+    font-family: Roc Grotesk W05 Wide Bold;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:80%;
+    margin-bottom: 1.5rem; /* Add margin if needed to adjust distance from bottom */
+
+}
+/* Small text at the top */
+.text-small1 {
+    text-shadow: 8px 8px 16px rgb(0, 0, 0); /* Apply shadow to text */
+    font-size: calc(2.5vw + 3vh);
+    margin-bottom: 0.5rem; /* Space between the two text elements */
+}
+
+.screen {
+    position: fixed;
+    background-size: cover; /* Ensure background image covers the whole area */
+    background-position: center; /* Center the background image */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #a4ddfb;
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 45% 46%;
+    z-index: 11; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 2rem;
+    pointer-events: none;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.square-box-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem; /* Space between the square boxes and the text */
+    margin-left: 5rem; 
+
+}
+
+.square-box,
+.square-box1 {
+    position: relative;
+    width: 30vw;
+    height: 33vh;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    background-color: rgb(0, 30, 255); /* Blue for square-box */
+    transition: transform 0.3s ease-in-out; /* Smooth movement */
+    pointer-events: auto; /* Ensure hover events are detected */
+}
+
+.square-box1 {
+    background-color: rgb(7, 11, 107); /* Darker blue for square-box1 */
+    pointer-events: auto; /* Ensure hover events are detected */
+}
+
+/* Hover effect for both boxes */
+.square-box:hover,
+.square-box1:hover {
+    transform: translateY(-10px); /* Move the box up slightly */
+}
+
+/* Text above the boxes */
+.square-box .hover-text-above,
+.square-box1 .hover-text-above {
+    position: absolute;
+    top: calc(-3.2rem - 10px); /* Position above the box, adjusted based on hover movement */
+    left: 0; /* Align text with the left edge of the box */
+    right: 0; /* Ensure text spans the full width of the box */
+    text-align: center;
+    color: black;
+    font-size: 2vh;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.square-box1 .hover-text-above{
+    top: calc(-2rem - 10px); /* Position above the box, adjusted based on hover movement */
+
+}
+/* Show text on hover */
+.square-box:hover .hover-text-above,
+.square-box1:hover .hover-text-above {
+    opacity: 1; /* Text above the box becomes visible */
+}
+
+
+
+
+
+/* Styling for the image inside the box */
+.box-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 2vw; /* Adjust width as needed */
+    height: 2vw; /* Adjust height as needed */
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* Styling for the number inside the box */
+.box-number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-family: Roc Grotesk W05 Wide;
+    font-size: calc(1vw + 1vh); /* Adjust font size as needed */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Styling for the main text inside the box */
+.box-text {
+    color: white;
+    font-family: Roc Grotesk W05 Wide;
+    font-size: calc(2vw + 2vh); /* Adjust font size as needed */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+
+.text-group2 {
+    color: black;
+    font-family: Roc Grotesk W05 Wide Bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    width: 80%;
+    margin-top: 0; /* Remove top margin */
+    text-align: left; /* Ensure text is left-aligned */
+    padding-right:2rem;
+}
+
+.text-small2 {
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 1.0); /* Apply shadow to text */
+    font-size:3.5vw;
+    margin-bottom: 0.5rem; /* Space between the two text elements */
+    text-align: left; /* Ensure this text is also left-aligned */
+}
+
+
+.new-screen {
+    position: fixed;
+    background-size: cover; /* Ensure background image covers the whole area */
+    background-position: center; /* Center the background image */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("image-grid/6076956.jpg"); /* Choose your desired background color */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 50% 51%;
+    z-index: 11; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* Styling for text-group */
+.text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    color:white;
+}
+
+.text-small {
+    font-family: Roc Grotesk W05 Wide ;
+    font-size: calc(2vw + 2vh);
+    margin-bottom: 0.5rem; /* Space between the two text elements */
+    margin-top: 0; /* Remove any default top margin */
+    padding-top: 0; /* Remove any padding that might add extra space */
+}
+
+/* Large text under the small text */
+.text-large {
+    font-family: Roc Grotesk W05 Wide Bold;
+    font-size: calc(2vw + 4vh);
+}
+
+
+.image-above-text {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    width: 20vh; /* Adjust the width as needed */
+    max-width: 250px; /* Limit the maximum width */
+
+}
+
+@keyframes slideUpNewScreen {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+.new-screen1 {
+    background-size: cover; /* Ensure background image covers the whole area */
+    background-position: center; /* Center the background image */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("image-grid/6076956.jpg"); /* Choose your desired background color */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 55% 56%;
+    z-index: 11; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.new-screen11{
+    background-size: cover; /* Ensure background image covers the whole area */
+    background-position: center; /* Center the background image */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("image-grid/8457913.jpg"); /* Choose your desired background color */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 60% 61%;
+    z-index: 11; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+
+.hacked {
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif;
+    position: fixed; /* Position the element fixed on the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    font-size: calc(5vw + 5vh); /* Adaptive font size */
+    color: white; /* Text color */
+    text-align: center; /* Center text alignment */
+    z-index: 14; /* Ensure it's above other content */
+    text-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.5), /* Dark shadow for depth */
+        8px 8px 16px rgba(0, 0, 0, 0.4), /* Larger shadow for more depth */
+        12px 12px 24px rgba(0, 0, 0, 0.3); /* Even larger shadow for a stronger 3D effect */
+}
+
+
+
+
+.new-screen2 {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 0; /* Start from the left edge */
+    width: 70vw; /* Cards cover 70% of the viewport width */
+    height: 70vh; /* Cards cover 70% of the viewport height */
+    background: linear-gradient(to bottom, white, #cbf4fc); /* Gradient background */
+    box-shadow: 0 0 30px 15px rgba(173, 216, 230, 0.6); /* Light blue shadow */
+    border-radius: 20px; /* Rounded corners with a 20px radius */
+    transform: translate(-100%, -50%); /* Initially position fully off-screen to the left */
+    z-index: 12; /* Ensure stacking above previous content */
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    pointer-events: none;
+    animation: slideInFromLeft 1s linear both; /* Slide-in animation */
+    animation-timeline: --myScroller; /* Animation timeline */
+    animation-range: 65% 70%;
+}
+
+.card-image {
+    width: 35%; /* Image takes 35% of the card's width */
+    height: 100%; /* Full height */
+    border-top-left-radius: 20px; /* Rounded top-left corner */
+    border-bottom-left-radius: 20px; /* Rounded bottom-left corner */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin-right: 2rem;
+}
+
+.financial1 {
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif;
+    font-size: calc(1.8vw + 1.8vh); /* Adaptive font size based on viewport */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.financial2 {
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif;
+    font-size: calc(1vw + 1vh); /* Adaptive font size based on viewport */
+    line-height: 1.5;
+}
+
+.financial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    color: black;
+    padding-left: 2rem;
+    max-height: 100%; /* Ensure text does not exceed card height */
+    overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box; /* Include padding in height calculation */
+    flex-grow: 1; /* Allow text container to grow within the card */
+    text-align: left;
+    padding-right: 4rem;
+}
+
+/* Small Screen Design */
+@media (max-width: 768px) {
+    .new-screen2 {
+        width: 70vw; /* Use the same width as for large screens */
+        height: 70vh; /* Use the same height as for large screens */
+        flex-direction: column; /* Stack image on top, text on bottom */
+        border-radius: 20px; /* Rounded corners for the entire card */
+        overflow: hidden; /* Ensure contents do not overflow */
+    }
+
+    .card-image {
+        width: 100%; /* Full width of the card */
+        height: 35%; /* Height of the image (35% of the card's height) */
+        border-top-left-radius: 20px; /* Rounded top-left corner of the image */
+        border-top-right-radius: 20px; /* Rounded top-right corner of the image */
+        border-bottom-left-radius: 0;
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        display: block; /* Ensure the image behaves as a block element */
+        margin: 0; /* Remove margins to avoid overflow */
+    }
+
+    .financial {
+        width: 100%; /* Full width for text */
+        padding-left: 2rem; /* Reduced padding for small screens */
+        padding-right: 2rem; /* Reduced padding for small screens */
+        box-sizing: border-box; /* Include padding in width calculation */
+        text-align: left; /* Ensure text alignment is consistent */
+        text-align: center;
+    }
+}
+
+
+
+.new-screen3 {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 0; /* Start from the left edge */
+    width: 70%; /* Cards cover 70% of the screen width */
+    height: 70%; /* Adjust height of the cards */
+    background: linear-gradient(to bottom, white, #cbf4fc); /* Gradient background from white to light grey */
+    box-shadow: 0 0 30px 15px rgba(173, 216, 230, 0.6); /* Light blue shadow with more spread */
+    border-radius: 20px; /* Rounded corners with a 20px radius */
+    transform: translate(-100%, -50%); /* Initially position fully off-screen to the left */
+    z-index: 12; /* Ensure they stack above the previous content */
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    pointer-events: none;
+    animation: slideInFromLeft 1s linear both; /* Ensure the slide-in animation is applied */
+    animation-timeline: --myScroller; /* Ensure the animation timeline is applied */
+    animation-range: 75% 80%;
+
+}
+
+.card-image1 {
+    width: 35%; /* Image takes 35% of the card's width */
+    height: 100%;
+    border-top-right-radius: 20px; /* Rounded top-right corner */
+    border-bottom-right-radius: 20px; /* Rounded bottom-right corner */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin-left: 2rem; /* Space between the image and the text */
+}
+
+.emotion1 {
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif;
+    font-size: calc(1.8vw + 1.8vh); /* Use viewport height for better adaptability */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.emotion2 {
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif;
+    font-size: calc(1vw + 1vh); /* Use viewport height for better adaptability */
+    line-height: 1.5;
+    
+}
+
+.emotion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    color: black;
+    padding-left: 4rem;
+    max-height: 100%; /* Ensure text does not exceed card height */
+    overflow: hidden; /* Prevents overflow */
+    box-sizing: border-box; /* Ensures padding is included in height calculation */
+    flex-grow: 1; /* Allow the text container to grow within the card */
+    text-align: right;
+    padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .new-screen3 {
+        width: 70vw; /* Use the same width as for large screens */
+        height: 70vh; /* Use the same height as for large screens */
+        flex-direction: column; /* Stack image on top, text on bottom */
+        border-radius: 20px; /* Rounded corners for the entire card */
+        overflow: hidden; /* Ensure contents do not overflow */
+    }
+
+    .card-image1 {
+        width: 100%; /* Full width of the card */
+        height: 35%; /* Height of the image (35% of the card's height) */
+        border-top-left-radius: 0; /* Rounded top-left corner of the image */
+        border-top-right-radius: 0; /* Rounded top-right corner of the image */
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        object-fit: cover; /* Ensure the image covers the area without distortion */
+        display: block; /* Ensure the image behaves as a block element */
+        margin: 0; /* Remove margins to avoid overflow */
+    }
+
+    .emotion {
+        width: 100%; /* Full width for text */
+        padding-left: 2rem; /* Reduced padding for small screens */
+        padding-right: 2rem; /* Reduced padding for small screens */
+        box-sizing: border-box; /* Include padding in width calculation */
+        text-align: left; /* Ensure text alignment is consistent */
+        text-align: center;
+    }
+}
+
+
+
+
+
+.new-screen6 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("image-grid/you\ are\ not\ alone.jpg"); /* Choose your desired background color */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 81% 82%;
+    z-index: 13; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.alone {
+    width: 60%;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: calc(4vw + 4vh); /* Full viewport height */
+    text-align: center; /* Center text within the element */
+    font-family: 'Roc Grotesk W05 Wide Bold', sans-serif; /* Optional font styling */
+    color: white; /* Set text color (adjust as needed) */
+    text-shadow: 8px 8px 16px #fff; /* White text shadow with offset and blur */
+}
+
+
+/* Slide in from the left */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translate(-110%, -50%); /* Fully off-screen to the left */
+    }
+    100% {
+        transform: translate(21.43%, -50%); /* Centered on screen (50% - (70% / 2) = 15%) */
+    }
+}
+
+.new-screen2 {
+    animation-range: 65% 70%; /* Adjust range for the first card */
+}
+
+.new-screen3 {
+    animation-range: 72% 77%; /* Adjust range for the second card */
+    z-index: 13; /* Stacking above the first card */
+}
+
+.new-screen5 {
+    animation-range: 88% 90%; /* Adjust range for the first card */
+}
+
+.sliding-card {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8f8f8;
+}
+
+.card-content {
+    position: absolute;
+    left: 100vw; /* Start completely off-screen to the right */
+    width: 300vw; /* 3 times the viewport width */
+    height: 100%;
+    background-color: #ffffff;
+    animation: slideCard linear forwards;
+    animation-timeline: scroll();
+    animation-range: 80% 100%; /* Adjust range to control when the animation starts and ends */
+}
+
+@keyframes slideCard {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-66.67vw); /* Move left by 2/3 of the viewport width */
+    }
+}
+
+
+
+.new-screen7 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #a4ddfb; /* Choose your desired background color */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 85% 86%;
+    z-index: 13; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.statistics {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 70%; /* Adjust as needed */
+}
+
+/* Text Sizes */
+.small {
+    font-family: Roc Grotesk W05 Wide;
+    font-size: calc(1.2vw + 1.2vh); /* Smallest text */
+    color: #666; /* Adjust color as needed */
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+
+}
+
+.small1 {
+    font-family: Roc Grotesk W05 Wide ;
+    font-size: calc(1.8vw + 1.8vh); /* Second smallest text */
+    color: #444; /* Adjust color as needed */
+    margin-bottom: 1.5rem;
+
+}
+
+.large {
+    font-family: Roc Grotesk W05 Wide Bold;
+    font-size: calc(3.5vw + 3.5vh); /* Large text for emphasis */
+    font-weight: bold;
+    color: #333; /* Adjust color as needed */
+
+}
+
+/* Learn More Button */
+.learn-more {
+    pointer-events: auto; /* Ensure the button is clickable */
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 20px; /* Space above the button */
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #fff; /* Button text color */
+    background-color: #007bff; /* Button background color */
+    border-radius: 25px; /* Rounded corners */
+    font-size: calc(1vw + 1vh);
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Button hover state */
+.learn-more:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Button active state */
+.learn-more:active {
+    transform: scale(0.95); /* Enlarge effect on click */
+}
+
+
+
+
+
+
+.new-screen8 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #4d9ae7, #000033); /* Dark blue gradient */
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 90% 91%;
+    z-index: 13; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+
+.news {
+    font-family: Roc Grotesk W05 Wide Bold;
+    font-size: calc(4vw + 4vh);
+    margin-bottom: 0.5rem; /* Space between the two text elements */
+    margin-top: 0; /* Remove any default top margin */
+    padding-top: 0; /* Remove any padding that might add extra space */
+}
+
+/* Large text under the small text */
+.news1 {
+    font-family: Roc Grotesk W05 Wide ;
+    font-size: calc(2vw + 2vh);
+}
+
+.news2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:70%;
+    color:white;
+}
+
+
+
+.new-screen9 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(6, 0, 95);
+    transform: translateY(100%);
+    animation: slideUpNewScreen 1s linear both;
+    animation-timeline: --myScroller;
+    animation-range: 95% 96%;
+    z-index: 13; /* Ensure it's above the sliding rectangle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.nextpage {
+    text-align: center;
+    max-width: 70%; /* Adjust as needed */
+    margin-top: 3rem;
+    flex: 1; /* Allow to grow and shrink as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center;
+}
+
+.nextpage1, .nextpage2, .nextpage3 {
+    margin: 0 auto; /* Center the text horizontally */
+}
+
+.nextpage1 {
+    font-family: Roc Grotesk W05 Wide;
+    font-size: calc(1.2vw + 1.2vh); /* Smallest text */
+    color: #a4ddfb; /* Adjust color as needed */
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+}
+
+.nextpage2 {
+    font-family: Roc Grotesk W05 Wide Bold;
+    font-size: calc(4vw + 4vh); /* Second smallest text */
+    color: #a4ddfb; /* Adjust color as needed */
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    
+}
+
+.nextpage3 {
+    font-family: Roc Grotesk W05 Wide;
+    font-size: calc(1.5vw + 1.5vh); /* Large text for emphasis */
+    color: #a4ddfb; /* Adjust color as needed */
+    max-width: 80%;
+    text-align: center; /* Center-aligns the text */
+    margin: 0 auto; /* Centers the element horizontally if it's block-level */
+    margin-bottom: 3rem;
+}
+
+.arrow-container {
+    margin-top: 2rem; /* Adjust as needed for spacing */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+
+.arrow-link {
+    display: inline-block; /* Ensures the link wraps the circle */
+    text-decoration: none; /* Remove underline */
+    margin-top: 2rem; /* Add some space above the circle */
+    pointer-events: auto;
+}
+
+.arrow-circle {
+    width: 15vw; /* Larger diameter for the circle */
+    height: 15vw; /* Make height equal to width for a perfect circle */
+    background-color: #a4ddfb; /* Circle color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 5rem;
+    cursor: pointer; /* Pointer cursor for better UX */
+}
+
+.arrow-right {
+    font-size: 15vw; /* Larger arrow size */
+    color: white; /* Arrow color */
+    position: absolute;
+}
+

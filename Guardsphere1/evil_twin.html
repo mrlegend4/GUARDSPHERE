@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evil Twin Attack</title>
+    <link rel="stylesheet" href="solution.css">
+</head>
+
+
+
+<body>
+    <header class="site-header">
+        <div class="header-title">
+            GUARDSPHERE
+        </div>
+        <div class="navbar-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon-label">
+                <img src="image-grid/navbar1-removebg-preview.png" alt="Menu Icon" class="menu-icon"> <!-- Replace with your icon's path -->
+            </label>
+            <div class="navbar-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="cybersecurity.html">THE PROBLEM</a></li>
+                    <li><a href="landing-page.html">THE SOLUTION</a></li>
+                    <li><a href="contact.html">CONTACT FORM</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="page">
+
+        <div class="subheading1">Evil Twin</div>
+
+        <div class="intro">
+        </div>
+
+        <div class="the_how">
+            <div class="container-group">
+                <!--Card 1 & 2-->
+                <div class="container one">
+        
+                    <div class="inner-left">
+                        <div class="image-left">
+                            <img src="image-grid/evil_twin_binocular.png" alt="Hacker searching for Vulnerabilities.">
+                        </div>
+                        <div class="content">
+                            <h1>1. Reconnaissance</h1>
+                            <p>Hackers typically look for busy locations like airports, coffee shops, hotels.</p>
+                        </div>    
+                    </div>
+                        
+                    <div class="inner-right">
+                        <div class="content">
+                            <p>These locations typically have multiple access points with the same name, making the hacker's fraudulent network difficult to notice.</p>
+                        </div>
+                        <div class="image-right">
+                            <img src="image-grid/evil_twin_satellite.png" alt="">
+                        </div> 
+                    </div>
+        
+                </div>
+        
+                <!--Card 3 & 4-->
+        
+                <div class="container two">
+        
+                    <div class="inner-left">
+                        <div class="image-left">
+                            <img src="image-grid/evil_twin_gutenberg.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h1>2. Forging fraudulent name tags</h1>
+                            <p>The hacker then takes note of the legitimate network's Service Set Identifier (SSID) and sets up a new account with the same SSID. </p>
+                        </div>
+                    </div>
+                        
+                    <div class="inner-right">
+                        <div class="content">
+                            <p>
+                                They then broadcast the fake SSID using easily accessible devices like 
+                            </p>
+                        </div>
+                        <div class="image-right">
+                            <img src="image-grid/evil_twin_rigged_router.png" alt="">
+                        </div>  
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-group">
+                <!--Card 5 & 6-->
+                <div class="container three">
+        
+                    <div class="inner-left">
+                        <div class="image-left">
+                            <img src="image-grid/evil_twin_black_hole.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h1>3. The black hole</h1>
+                            <p>But what about the captive login page where you sign in with your social accounts?</p>
+                        </div>
+                    </div>
+                        
+                    <div class="inner-right">
+                        
+                        <div class="content">
+                            <p>Hackers forge those too and skillfully to the extent that it is indistinguishable from the authentic one. And your browser doesn't gives any warning either.</p>
+                        </div>
+        
+                        <div class="image-right">
+                            <img src="image-grid/evil_twin_accessing_captive_portal.png" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+        
+                <!--Card 7 & 8-->
+                <div class="container four">
+                    <div class="inner-left">
+                        <div class="image-left">
+                            <img src="image-grid/evil_twin_coup_digital.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h1>4. Coup d'état</h1>
+                            <p>The user was connected to the authentic network but they encountered a signal dropout. Strategically placed rogue AP that emit stronger signal is picked up by devices in proximity.</p>
+                        </div>
+                    </div>
+                        
+                    <div class="inner-right">
+                        <div class="content">
+                            <p>The user's device, set to automatically connect to familiar networks, unassumingly connects to the rogue AP since it recognizes the network name and previously stored credentials.</p>
+                        </div>
+                        <div class="image-right">
+                            <img src="image-grid/evil_twin_unassuming_victim.png" alt="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="subheading2">Ways to tackle</div>
+    
+        <div class="masonry">
+            <div class="card">
+                <img src="image-grid/evil_twin_hotspot.svg" class="card-image large" alt="landscape">
+                <div class="card-inner">
+                    <h3 class="title">Use your own hotspot</h3>
+                    <p class="paragraph">Set a password to keep your access point private.</p>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="image-grid/evil_twin_disable_auto_connect.svg" alt="landscape">
+                <div class="card-inner">
+                    <h3 class="title">Disable auto-connect at vulnerable locations</h3>
+                    <p class="paragraph">This feature automatically connect to any networks that you have used before once you're in range. This can be dangerous in public places.</p>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="image-grid/evil_twin_mfa.svg" class="card-image" alt="landscape">
+                <div class="card-inner">
+                    <h3 class="title">Use multi-factor authentication</h3>
+                    <p class="paragraph">Multi-factor authentication is when two or more steps are required to log into a system. You may combine a password requirement with a code sent to your mobile phone that you need to enter to proceed.</p>
+                </div>
+            </div>
+    
+            <div class="card">
+                <img src="image-grid/evil_twin_safe_webpage.png" class="card-image" alt="landscape">
+                <div class="card-inner">
+                    <h3 class="title">Stick to HTTPS websites</h3>
+                    <p class="paragraph">When using a public network, make sure you only visit HTTPS websites, as opposed to HTTP. (The ‘s’ stands for secure.) An HTTPS website will have end-to-end encryption, which prevents hackers from seeing what you are doing.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="subheading">External Resources</h2>
+
+        <div class="references">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1OVTmrXGHyU?si=08f1GgzVMQURd55x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="new-screen">
+            <div class="nextpage">
+                <div class="nextpage1">Next Page</div>
+                <div class="nextpage2">ZERO DAY EXPLOITS</div>
+                <div class="nextpage3">Some weaknesses are exploited at Day 0</div>
+            </div>
+            <a href="zero_day.html" class="arrow-link">
+                <div class="arrow-circle">
+                    <span class="arrow-right">&#8594;</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+
+</body>
+</html>
